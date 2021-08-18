@@ -8,7 +8,7 @@ This module explored HTTP methods, REST interfaces, CRUD apps and using put and 
 - Understand how to pass values into a Route component to allow for the updating of state.
 
 ## Introduction
-CRUD applications are the foundation of most web applications. Being able to manage creating, edit and deleting data from an external source is as key a skill as it gets. In this project, you will complete the code nessisary to allow all of these fundmental actions.
+CRUD applications are the foundation of most web applications. Being able to manage creating, edit and deleting data from an external source is as key a skill as it gets. In this project, you will complete the code necessary to allow all of these fundamental actions.
 
 ![Movie DB Example](project-goals.gif)
 
@@ -65,7 +65,7 @@ CRUD applications are the foundation of most web applications. Being able to man
 
 * [ ] Locate the part of the ui that should redirect to your new `AddMovieForm`. Make that button works as expected.
 
-* [ ] In `AddMovieForm,` add an event handler for form submission. When the form is submitted, run the approprate request for adding a movie with the component's state values.
+* [ ] In `AddMovieForm,` add an event handler for form submission. When the form is submitted, run the appropriate request for adding a movie with the component's state values.
 
 * [ ] Make sure your component has access to and runs and modifications needed to global state and redirects to `/movies` after creation.
 
