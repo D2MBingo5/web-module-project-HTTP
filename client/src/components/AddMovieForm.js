@@ -3,13 +3,16 @@ import axios from 'axios'
 
 import { Link } from 'react-router-dom'
 
+import { useHistory } from "react-router-dom"
+
 const AddMovieForm = (props) => {
+    const { push } = useHistory()
 
     const [movie, setMovie] = useState({
         title: '',
         director: '',
         genre: '',
-        metascore: null,
+        metascore: 0,
         description: ''
     })
 
@@ -23,6 +26,13 @@ const AddMovieForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('submission attempted')
+        axios.post(`http://localhost:5000/api/movies`, movie)
+            .then(res => {
+                console.log(res.data)
+                props.setMovie(res.data)
+                push(`/movies`)
+            })
+            .catch(err => {console.log(err)})
     }
 
     const { title, director, genre, metascore, description } = movie
@@ -50,7 +60,7 @@ const AddMovieForm = (props) => {
                             </div>
                             <div className='form-group'>
                                 <label>Metascore</label>
-                                <input value={metascore} onChange={handleChange} type='number' className='form-control'/>
+                                <input value={metascore} onChange={handleChange} name='metascore' type='number' className='form-control'/>
                             </div>
                             <div className='form-group'>
                                 <label>Description</label>
