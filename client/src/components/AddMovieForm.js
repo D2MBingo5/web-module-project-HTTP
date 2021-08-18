@@ -20,14 +20,18 @@ const AddMovieForm = (props) => {
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('submission attempted')
+    }
+
     const { title, director, genre, metascore, description } = movie
 
     return (
         <div>
             <div className='col'>
                 <div className='modal-content'>
-                    {/* add components in all nulls */}
-                    <form onSubmit={null}>
+                    <form onSubmit={handleSubmit}>
                         <div className='modal-header'>
                             <h4 className='modal-title'>Add Movie</h4>
                         </div>
