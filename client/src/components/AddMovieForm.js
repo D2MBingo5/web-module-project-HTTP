@@ -9,9 +9,16 @@ const AddMovieForm = (props) => {
         title: '',
         director: '',
         genre: '',
-        metascore: 0,
+        metascore: null,
         description: ''
     })
+
+    const handleChange = (e) => {
+        setMovie({
+            ...movie,
+            [e.target.name]: e.target.value
+        })
+    }
 
     const { title, director, genre, metascore, description } = movie
 
@@ -27,23 +34,23 @@ const AddMovieForm = (props) => {
                         <div className='modal-body'>
                             <div className='form-group'>
                                 <label>Title</label>
-                                <input value={title} onChange={null} name='title' type='text' className='form-control'/>
+                                <input value={title} onChange={handleChange} name='title' type='text' className='form-control'/>
                             </div>
                             <div className='form-group'>
                                 <label>Director</label>
-                                <input value={director} onChange={null} name='director' type='text' className='form-control' />
+                                <input value={director} onChange={handleChange} name='director' type='text' className='form-control' />
                             </div>
                             <div className='form-group'>
                                 <label>Genre</label>
-                                <input value={genre} onChange={null} name='genre' type='text' className='form-control'/>
+                                <input value={genre} onChange={handleChange} name='genre' type='text' className='form-control'/>
                             </div>
                             <div className='form-group'>
                                 <label>Metascore</label>
-                                <input value={metascore} onChange={null} type='number' className='form-control'/>
+                                <input value={metascore} onChange={handleChange} type='number' className='form-control'/>
                             </div>
                             <div className='form-group'>
                                 <label>Description</label>
-                                <textarea value={description} onChange={null} name='description' className='form-control'></textarea>
+                                <textarea value={description} onChange={handleChange} name='description' className='form-control'></textarea>
                             </div>
                         </div>
                         <div className='modal-footer'>
